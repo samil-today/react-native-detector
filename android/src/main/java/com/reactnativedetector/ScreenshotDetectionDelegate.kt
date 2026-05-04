@@ -39,7 +39,7 @@ class ScreenshotDetectionDelegate(val context: ReactContext, val listener: Scree
         if (uri != null) {
           val path = getFilePathFromContentResolver(context, uri)
           if (path != null && isScreenshotPath(path)) {
-            previousPath = path.toLowerCase().substring(path.toLowerCase().lastIndexOf("screenshot"))
+            previousPath = path.lowercase().substring(path.lowercase().lastIndexOf("screenshot"))
             onScreenCaptured(path!!)
           }
         }
@@ -74,7 +74,7 @@ class ScreenshotDetectionDelegate(val context: ReactContext, val listener: Scree
         if (uri != null) {
           val path = getFilePathFromContentResolver(context, uri)
           if (path != null && isScreenshotPath(path)) {
-            previousPath = path.toLowerCase().substring(path.toLowerCase().lastIndexOf("screenshot"))
+            previousPath = path.lowercase().substring(path.lowercase().lastIndexOf("screenshot"))
             onScreenCaptured(path!!)
           }
         }
@@ -103,7 +103,7 @@ class ScreenshotDetectionDelegate(val context: ReactContext, val listener: Scree
   }
 
   private fun isScreenshotPath(path: String?): Boolean {
-    return path != null && path.toLowerCase().contains("screenshots") && (previousPath == "" || !path.toLowerCase().contains(previousPath))
+    return path != null && path.lowercase().contains("screenshots") && (previousPath == "" || !path.lowercase().contains(previousPath))
   }
 
   @SuppressLint("Range")
